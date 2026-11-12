@@ -1,5 +1,6 @@
 package com.jeshua.voopp;
 
+import com.jeshua.voopp.navegacion.Navegacion;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -9,18 +10,15 @@ import javafx.stage.Stage;
 
 
 /**
- * JavaFX App
+ * JavaFX App "/com/jeshua/voopp/recursos/fxml/MenuPrincipal.fxml"
  */
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jeshua/voopp/recursos/fxml/MenuPrincipal.fxml"));
-        Parent root = loader.load();
-        
-        Scene scene = new Scene(root, 600, 400);
+        Navegacion.init(stage);
+        Navegacion.cambiar("/com/jeshua/voopp/recursos/fxml/MenuPrincipal.fxml");
         stage.setTitle("VOOPP");
-        stage.setScene(scene);
         stage.show();
     }
 
